@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+h1 {
+	text-align: center;
+	color: purple;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table, td {
+	border: 1px solid black;
+	/* 	선이 두개로 보임 문제 해결 */
+	border-collapse: collapse;
+}
+
+td {
+	height: 40px;
+}
+
+#one_col {
+	text-align: center;
+	color: green;
+	font-size: 20px;
+	width: 150px;
+}
+
+#two_col {
+	color: aqua;
+	font-size: 15px;
+	width: 300px;
+}
+
+input {
+	border: 1px solid black;
+	background: orange;
+	font-size: 30px;
+} 
+
+input:active{
+	box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+
+}
+
+input:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+#buttons {
+	text-align: center;
+	margin-top: 50px;
+}
+
+#modify {
+	margin-right: 50px;
+}
+</style>
+
+</head>
+<body>
+
+	<h1>상세 게시물 화면</h1>
+	<br>
+	<table>
+		<tr>
+			<td id="one_col">제목</td>
+			<td id="two_col">제목1</td>
+		</tr>
+		<tr>
+			<td id="one_col">작성자</td>
+			<td id="two_col">작성자1</td>
+		</tr>
+		<tr>
+			<td id="one_col">작성자</td>
+			<td id="two_col">작성자1</td>
+		</tr>
+		<tr>
+			<td id="one_col">작성시간</td>
+			<td id="two_col">2022년도2월4일</td>
+		</tr>
+		<tr>
+			<td id="one_col">조회수</td>
+			<td id="two_col">1</td>
+		</tr>
+
+	</table>
+	<br>
+	<form action="/b.jsp">
+		<div id="buttons">
+			<input type="button" onClick="(function(){ alert('Hey i am calling'); return false;})();" value="수정버튼" id="modify"> <input type="button" value="삭제버튼">
+		</div>
+	</form>
+	
+	<button>테스트버튼</button>
+</body>
+</html>
