@@ -1,4 +1,4 @@
-package week3.day5.field_lecture.test;
+package week3.day5.field_lecture.test.test1;
 
 public class Trainee {
 
