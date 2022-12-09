@@ -1,4 +1,4 @@
-package week3.day5.concurrency;
+package week3.day5.online_lecture.concurrency;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

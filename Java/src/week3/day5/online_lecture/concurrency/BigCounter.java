@@ -1,4 +1,4 @@
-package week3.day5.concurrency;
+package week3.day5.online_lecture.concurrency;
 
 public class BigCounter {
     private int i = 0;

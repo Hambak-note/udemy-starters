@@ -15,6 +15,5 @@ public class FileWriteRunner {
 
         Files.write(pathFileToWrite, list);
 
-
     }
 }

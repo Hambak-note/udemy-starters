@@ -1,7 +1,5 @@
-package week3.day5.concurrency;
+package week3.day5.online_lecture.concurrency;
 
-import java.util.Hashtable;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.LongAdder;
