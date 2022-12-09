@@ -32,6 +32,16 @@ public class Member {
 
     public void setPassword(int pw) {
         this.pw = pw;
+        printSetPasswordMessage();
+    }
+
+    public void getMyInfo(){
+        System.out.println("------------------");
+        System.out.println("아이디 : " + id + " 회원님 정보는 다음과 같습니다" + "\n" +
+                "암호 : " + pw + "\n" +
+                "이름 : " + name + "\n" +
+                "나이 : " + age);
+        System.out.println("------------------");
     }
 
     private void printInsertInformation(){
