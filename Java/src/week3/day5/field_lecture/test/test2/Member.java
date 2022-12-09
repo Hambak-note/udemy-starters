@@ -14,5 +14,12 @@ public class Member {
         this.age = -1;
     }
 
+    public void insert(String id, int pw, String name, int age){
+        this.id = id;
+        this.pw = pw;
+        this.name = name;
+        this.age = age;
+    }
+
 
 }
