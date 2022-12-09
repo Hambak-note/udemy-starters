@@ -44,6 +44,15 @@ public class Member {
         System.out.println("------------------");
     }
 
+    public String logout(){
+        this.id = null;
+        this.pw = -1;
+        this.name= null;
+        this.age = -1;
+        printLogoutMessage();
+        return id;
+    }
+
     private void printInsertInformation(){
         System.out.println("아이디 : " + id + "\n" +
                 "이름 : " + name + "\n" +
@@ -66,6 +75,12 @@ public class Member {
     private void printSetPasswordMessage(){
         System.out.println("------------------");
         System.out.println("암호를 변경하였습니다.");
+        System.out.println("------------------");
+    }
+
+    private void printLogoutMessage(){
+        System.out.println("------------------");
+        System.out.println("로그아웃되었습니다.");
         System.out.println("------------------");
     }
 
