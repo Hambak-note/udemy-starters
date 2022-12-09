@@ -19,7 +19,14 @@ public class Member {
         this.pw = pw;
         this.name = name;
         this.age = age;
+        printInsertInformation();
     }
 
+    private void printInsertInformation(){
+        System.out.println("아이디 : " + id + "\n" +
+                "이름 : " + name + "\n" +
+                "나이 : " + age + "\n" +
+                "가입이 완료 되었습니다.");
+    }
 
 }
