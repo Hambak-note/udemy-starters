@@ -30,6 +30,10 @@ public class Member {
         printLoginFail();
     }
 
+    public void setPassword(int pw) {
+        this.pw = pw;
+    }
+
     private void printInsertInformation(){
         System.out.println("아이디 : " + id + "\n" +
                 "이름 : " + name + "\n" +
@@ -46,6 +50,12 @@ public class Member {
     private void printLoginFail(){
         System.out.println("------------------");
         System.out.println("로그인 정보를 확인하세요.");
+        System.out.println("------------------");
+    }
+
+    private void printSetPasswordMessage(){
+        System.out.println("------------------");
+        System.out.println("암호를 변경하였습니다.");
         System.out.println("------------------");
     }
 
