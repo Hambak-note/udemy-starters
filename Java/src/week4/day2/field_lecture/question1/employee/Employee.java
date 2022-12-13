@@ -1,4 +1,4 @@
-package week4.day2.field_lecture.employee;
+package week4.day2.field_lecture.question1.employee;
 
 public class Employee {
 

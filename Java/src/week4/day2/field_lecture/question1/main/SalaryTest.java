@@ -1,9 +1,9 @@
-package week4.day2.field_lecture.main;
+package week4.day2.field_lecture.question1.main;
 
-import week4.day2.field_lecture.employee.Employee;
-import week4.day2.field_lecture.employee_child.Engineer;
-import week4.day2.field_lecture.employee_child.Manager;
-import week4.day2.field_lecture.employee_child.Secretary;
+import week4.day2.field_lecture.question1.employee.Employee;
+import week4.day2.field_lecture.question1.employee_child.Engineer;
+import week4.day2.field_lecture.question1.employee_child.Manager;
+import week4.day2.field_lecture.question1.employee_child.Secretary;
 
 public class SalaryTest {
     public static void main(String[] args) {

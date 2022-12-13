@@ -1,6 +1,6 @@
-package week4.day2.field_lecture.employee_child;
+package week4.day2.field_lecture.question1.employee_child;
 
-import week4.day2.field_lecture.employee.Employee;
+import week4.day2.field_lecture.question1.employee.Employee;
 
 public class Engineer extends Employee {
 
