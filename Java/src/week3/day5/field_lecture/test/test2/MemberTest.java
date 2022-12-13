@@ -12,6 +12,7 @@ public class MemberTest {
         String id  = mem.logout();
         if(id == null){
             System.out.println("다시 로그인하셔야 합니다.");
+        }
     }
 
 }
