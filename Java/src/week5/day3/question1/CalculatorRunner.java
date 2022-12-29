@@ -16,7 +16,6 @@ public class CalculatorRunner {
         int data1 = 0;
         int data2 = 0;
 
-
         startMenu();
         while(true){
             inputMessage();

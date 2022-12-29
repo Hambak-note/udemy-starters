@@ -1,5 +1,7 @@
 package week4.day4.question2;
 
+import java.util.Objects;
+
 public class MySum {
 
     int first;
@@ -17,8 +19,15 @@ public class MySum {
 
 
     @Override
-    public boolean equals(Object obj) {
-        return this.toString().equals(obj.toString());
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MySum mySum = (MySum) o;
+        return (first+second) == (mySum.first+mySum.second);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second);
+    }
 }
