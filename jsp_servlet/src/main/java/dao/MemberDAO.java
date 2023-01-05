@@ -10,7 +10,28 @@ import java.util.Set;
 
 import dto.MemberDTO;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
 public class MemberDAO {
+
+
+	private Connection con;
+	private PreparedStatement pstmt;
+	private DataSource dataFactory;
+
+	public MemberDAO() {
+		try {
+			Context ctx = new InitialContext();
+			Context envContext = (Context) ctx.lookup("java:/comp/env");
+			dataFactory = (DataSource) envContext.lookup("jdbc/mydb");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
 	public int insertMember(MemberDTO dto) {
 		Connection con= null;
 		PreparedStatement pt = null;
@@ -122,19 +143,13 @@ public class MemberDAO {
 	}//getMemberList	
 	
 	public MemberDTO getMember(String id, String pw) {
-		Connection con= null;
-		PreparedStatement pt= null;
 		MemberDTO dto= null;
 		try {
-		Class.forName(ConnectionInform.DRIVER_CLASS);
-		//1.db 연결
-		con = DriverManager.getConnection
-		(ConnectionInform.JDBC_URL, ConnectionInform.USERNAME, ConnectionInform.PASSWORD);
-		String sql= "select * from member where id=?";
-		//rs.next() true 
-		pt = con.prepareStatement(sql);
-		pt.setString(1, id);
-		ResultSet rs= pt.executeQuery();
+			con = dataFactory.getConnection();
+			String sql= "select * from member where id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			ResultSet rs= pstmt.executeQuery();
 		if(rs.next()) {
 			String dbpw = rs.getString("pw");
 			if(pw.equals(dbpw)) {
@@ -160,7 +175,7 @@ public class MemberDAO {
 			e.printStackTrace();
 		}finally {
 			try {
-				pt.close();
+				pstmt.close();
 				con.close();
 			}catch(Exception e) {}
 		}

@@ -1,0 +1,40 @@
+package filter;
+
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpFilter;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+
+@WebFilter("/*")
+public class EncodingFilter extends HttpFilter implements Filter {
+
+    @Override
+    public void destroy() {
+
+    }
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        System.out.println("FILTER 시작");
+        //모든 서블릿 실행시마다(요청) 서블릿이름, 요청 클라이언트 IP 출력 후에 - 서블릿 doGet, Post
+        String servletname = ((HttpServletRequest) request).getServletPath();
+        String clientip = request.getRemoteAddr();
+        System.out.println(clientip + " 컴퓨터가 " + servletname + " 을 호출했습니다.");
+
+        //서블릿 요청인코딩 변경(get(변화없다)/post(o) )
+        // spring 그대로 적용
+        request.setCharacterEncoding("utf-8");
+
+        //요청 - 요청 필터 - 처리 - 응답필터 - 응답
+        long start = System.currentTimeMillis();
+        chain.doFilter(request, response);
+        long stop = System.currentTimeMillis();
+        System.out.println((stop - start) + "실행 소요 시간(1/1000초)");
+    }
+
+    public void init(FilterConfig fConfig) throws ServletException {
+
+    }
+}
